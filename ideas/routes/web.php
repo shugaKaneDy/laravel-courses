@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,18 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 
 
+MVC = Model View Controller
+
+Controller : Handle Request
+Model : Handle data logic and instructions with database (database)
+View : What should be shown to the user (HTML and CSS code / Blade files)
+
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[ DashboardController::class, 'index' ]);
+Route::get('/profile',[ ProfileController::class, 'index' ]);
 
-Route::get('/feed', function () {
-    return view('feed');
-});
 
-Route::get('/profile', function () {
-    return view('users.profile');
-});
 
