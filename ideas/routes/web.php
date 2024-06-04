@@ -32,5 +32,9 @@ Route::get('/terms', function () {
     return view('terms');
 });
 
+Route::get('/dbconn', function () {
+    return view('dbconn');
+});
+
 
 
