@@ -7,7 +7,28 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index() {
-        return view("welcome");
+
+        $users = [
+          [
+            'name' => 'Kane',
+            'age' => 21,
+          ],
+          [
+            'name' => 'Sherwin',
+            'age' => 23,
+          ],
+          [
+            'name' => 'John',
+            'age' => 17,
+          ]
+        ];
+
+        return view(
+          "dashboard",
+          [
+            'users' => $users
+          ]
+        );
     }
-    
+
 }
