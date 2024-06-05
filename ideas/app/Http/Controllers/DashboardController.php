@@ -9,10 +9,11 @@ class DashboardController extends Controller
 {
     public function index() {
 
+        /* Inserting data into database
         $idea = new Idea([
             'content' => 'Hello Youtube'
         ]);
-        $idea->save();
+        $idea->save(); */
 
         /* dump(Idea::all()); */
         return view('dashboard', [

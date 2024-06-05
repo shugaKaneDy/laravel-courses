@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\IdeaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +25,9 @@ View : What should be shown to the user (HTML and CSS code / Blade files)
 */
 
 
-Route::get('/',[ DashboardController::class, 'index' ]);
+Route::get('/',[ DashboardController::class, 'index' ])->name('dashboard');
 Route::get('/profile',[ ProfileController::class, 'index' ]);
+Route::post('/idea',[ IdeaController::class, 'store' ])->name('idea.create');
 
 
 Route::get('/terms', function () {
