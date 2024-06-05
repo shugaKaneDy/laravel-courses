@@ -51,6 +51,7 @@
         </div>
     </div>
     <div class="col-6">
+        @include('shared.success')
         @include('shared.submit-idea')
         <hr>
         @foreach ($ideas as $idea)
