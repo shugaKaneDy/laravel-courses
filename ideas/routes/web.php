@@ -27,7 +27,10 @@ View : What should be shown to the user (HTML and CSS code / Blade files)
 
 Route::get('/',[ DashboardController::class, 'index' ])->name('dashboard');
 Route::get('/profile',[ ProfileController::class, 'index' ]);
-Route::post('/idea',[ IdeaController::class, 'store' ])->name('idea.create');
+Route::post('/ideas',[ IdeaController::class, 'store' ])->name('ideas.store');
+
+Route::delete('/ideas/{id}',[ IdeaController::class, 'destroy' ])->name('ideas.destroy');
+
 
 
 Route::get('/terms', function () {
@@ -37,6 +40,5 @@ Route::get('/terms', function () {
 Route::get('/dbconn', function () {
     return view('dbconn');
 });
-
 
 

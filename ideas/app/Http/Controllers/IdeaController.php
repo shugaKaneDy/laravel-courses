@@ -16,6 +16,16 @@ class IdeaController extends Controller
             'content' => request()->get('idea', '')
         ]);
 
-        return redirect()->route('dashboard')->with('success', 'Idea has been created successfully!');
+        return redirect()->route('dashboard')->with('success', 'Idea created successfully!');
     }
+
+    public function destroy($id) {
+        /* $idea = Idea::where('id', $id)->firstOrFail()->delete(); */
+        Idea::where('id', $id)->firstOrFail()->delete();
+        /* $idea->delete(); */
+
+        return redirect()->route('dashboard')->with('success', 'Idea deleted successfully!');
+    }
+
+
 }
